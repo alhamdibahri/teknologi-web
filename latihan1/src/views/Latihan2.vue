@@ -10,7 +10,7 @@
         <p v-if="stok > 10">Stok Ada</p>
         <p v-else-if="stok< 10 && stok > 0">Buruan, hampir habis</p>
         <p v-else>Kosong</p>
-        <button v-show="stok > 0" style="background:#d9534f; font-size:20px; border:none; color:white;">Kuy, Lagi Diskon!!!</button>
+        <button v-show="stok > 0 && diskon" class="btn-danger">Kuy, Lagi Diskon!!!</button>
       </div>
     </div>
   </div>
@@ -26,6 +26,7 @@ export default {
       foto: require("./../assets/sepatu.png" ),
       link: "https://facebook.com/pepenk0",
       stok: 5,
+      diskon: true
     }
   }
 }
@@ -64,5 +65,9 @@ img{
 .info-produk{
   margin-top: 10px;
   width: 50%;
+}
+
+.btn-danger{
+  background:#d9534f; font-size:20px; border:none; color:white;
 }
 </style>
