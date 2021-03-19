@@ -7,7 +7,10 @@
       </div>
       <div class="info-produk">
         <h1>{{ produk }}</h1>
-        <a :href="link" target="_blank">Cek Detail Informasinya</a>
+        <p v-if="stok > 10">Stok Ada</p>
+        <p v-else-if="stok< 10 && stok > 0">Buruan, hampir habis</p>
+        <p v-else>Kosong</p>
+        <button v-show="stok > 0" style="background:#d9534f; font-size:20px; border:none; color:white;">Kuy, Lagi Diskon!!!</button>
       </div>
     </div>
   </div>
@@ -21,7 +24,8 @@ export default {
     return{
       produk: "Kaos Kaki",
       foto: require("./../assets/sepatu.png" ),
-      link: "https://facebook.com/pepenk0"
+      link: "https://facebook.com/pepenk0",
+      stok: 5,
     }
   }
 }
